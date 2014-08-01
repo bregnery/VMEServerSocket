@@ -13,7 +13,7 @@
  * sockfd is the socket number
  */
 
-int32_t ReadCAENVME_Init(int32_t storage[], int32_t sockfd){
+int32_t ReadCAENVME_Init(int32_t storage[6], int32_t sockfd){
 	printf("Parameter Values: \n");
 	int32_t i;
 	/*
@@ -30,7 +30,7 @@ int32_t ReadCAENVME_Init(int32_t storage[], int32_t sockfd){
 	return n;
 }
 
-int32_t ReadCAENVME_End(int32_t storage[], int32_t sockfd){
+int32_t ReadCAENVME_End(int32_t storage[6], int32_t sockfd){
 	printf("Parameter Value: %d\n", storage[1]);
 	int32_t n, status;
 	int32_t info[1];
@@ -57,7 +57,7 @@ int32_t ReadCAENVME_WriteCycle(int32_t storage[6], int32_t sockfd){
 	return n;
 }
 
-int32_t ReadCAENVME_ReadCycle(int32_t storage[], int32_t sockfd){
+int32_t ReadCAENVME_ReadCycle(int32_t storage[6], int32_t sockfd){
 	printf("Parameter Values: \n");
 	int32_t i;
 	/*
