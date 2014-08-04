@@ -49,20 +49,22 @@ int main(int argc, char *argv[])
           error("ERROR on accept");
      bzero(buffer,256);
      //n = read(newsockfd,buffer,255);
-     n = read(newsockfd,storage, sizeof(storage));
-     if (n < 0) error("ERROR reading from socket");
-     if (n != sizeof(storage)) printf("Sized received is wrong %d\n", n);
-     printf("Recieved Data!");
+     while(1){
+     	n = read(newsockfd,storage, sizeof(storage));
+     	if (n < 0) error("ERROR reading from socket");
+     	if (n != sizeof(storage)) error("Sized received is wrong"); printf("%d\n", n);
+     	printf("Recieved Data!");
 
-     // Identify the function to read the data
-     if (storage[0] == 1) ReadCAENVME_Init(storage, newsockfd);
-     else if (storage[0] == 2) ReadCAENVME_End(storage, newsockfd);
-     else if (storage[0] == 3) ReadCAENVME_WriteCycle(storage, newsockfd);
-     else if (storage[0] == 4) ReadCAENVME_ReadCycle(storage, newsockfd);
-     else printf("Undefined function \n");
-
+     	// Identify the function to read the data
+     	if (storage[0] == 1) ReadCAENVME_Init(storage, newsockfd);
+     	else if (storage[0] == 2) ReadCAENVME_End(storage, newsockfd);
+     	else if (storage[0] == 3) ReadCAENVME_WriteCycle(storage, newsockfd);
+     	else if (storage[0] == 4) ReadCAENVME_ReadCycle(storage, newsockfd);
+     	else printf("Undefined function \n");
+     }
      n = write(newsockfd,"I got your message",18);
      if (n < 0) error("ERROR writing to socket");
+     usleep(10000);
      close(newsockfd);
      close(sockfd);
      return 0; 
