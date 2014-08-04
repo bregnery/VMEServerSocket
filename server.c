@@ -52,8 +52,11 @@ int main(int argc, char *argv[])
      while(1){
      	n = read(newsockfd,storage, sizeof(storage));
      	if (n < 0) error("ERROR reading from socket");
-     	if (n != sizeof(storage)) error("Sized received is wrong"); printf("%d\n", n);
-     	printf("Recieved Data!");
+     	if (n != sizeof(storage)){ 
+		error("Sized received is wrong"); 
+		printf("%d\n", n);
+     	}
+	printf("Recieved Data!");
 
      	// Identify the function to read the data
      	if (storage[0] == 1) ReadCAENVME_Init(storage, newsockfd);
