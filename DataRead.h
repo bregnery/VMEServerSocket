@@ -74,17 +74,19 @@ int32_t ReadCAENVME_ReadCycle(int32_t storage[6], int32_t sockfd){
 	return n;
 }
 
+/*
 int32_t CAENVME_Init(CVBoardTypes BdType, short Link, short BdNum, int32_t *Handle){
 	printf("%d\n", BdType);
 	printf("%d\n", Link);
 	printf("%d\n", BdNum);
 	printf("%d\n", *Handle);
-	return 1;
+	return cvSuccess;
 }
+
 
 int32_t CAENVME_End(int32_t Handle){
 	printf("%d\n", Handle);
-	return 1;
+	return cvSuccess;
 }
 
 int32_t CAENVME_WriteCycle(int32_t Handle, uint32_t Address, void *Data, CVAddressModifier AM, CVDataWidth DW){
@@ -93,7 +95,7 @@ int32_t CAENVME_WriteCycle(int32_t Handle, uint32_t Address, void *Data, CVAddre
 	printf("%d\n", *((uint32_t*)Data));
 	printf("%d\n", AM);
 	printf("%d\n", DW);
-	return 1;
+	return cvSuccess;
 }
 
 int32_t CAENVME_ReadCycle(int32_t Handle, uint32_t Address, void *Data, CVAddressModifier AM, CVDataWidth DW){	
@@ -102,5 +104,6 @@ int32_t CAENVME_ReadCycle(int32_t Handle, uint32_t Address, void *Data, CVAddres
 	printf("%d\n", *((uint32_t*)Data));
 	printf("%d\n", AM);
 	printf("%d\n", DW);
-	return 1;
+	return cvSuccess;
 }
+*/

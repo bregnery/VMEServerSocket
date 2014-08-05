@@ -11,6 +11,7 @@
 #include "CAENVMEtypes.h"
 #include "DataRead.h"
 
+int n;
 void error(const char *msg)
 {
     perror(msg);
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
      socklen_t clilen;
      char buffer[256];
      struct sockaddr_in serv_addr, cli_addr;
-     int n;
+
      if (argc < 2) {
          fprintf(stderr,"ERROR, no port provided\n");
          exit(1);
@@ -53,8 +54,8 @@ int main(int argc, char *argv[])
      	n = read(newsockfd,storage, sizeof(storage));
      	if (n < 0) error("ERROR reading from socket");
      	if (n != sizeof(storage)){ 
-		error("Sized received is wrong"); 
 		printf("%d\n", n);
+		error("Sized received is wrong"); 
      	}
 	printf("Recieved Data!");
 
