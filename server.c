@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 		printf("%d\n", n);
 		error("Sized received is wrong"); 
      	}
-	printf("Recieved Data!");
+	printf("Recieved Data!\n");
 
      	// Identify the function to read the data
      	if (storage[0] == 1) ReadCAENVME_Init(storage, newsockfd);

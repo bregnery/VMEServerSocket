@@ -16,7 +16,7 @@
 int32_t info[2];
 
 int32_t ReadCAENVME_Init(int32_t storage[6], int32_t sockfd){
-	printf("Parameter Values: \n");
+	//printf("Parameter Values: \n");
 	/*
 	int32_t i;
 	for(i=0; i<6; i++){
@@ -32,7 +32,7 @@ int32_t ReadCAENVME_Init(int32_t storage[6], int32_t sockfd){
 }
 
 int32_t ReadCAENVME_End(int32_t storage[6], int32_t sockfd){
-	printf("Parameter Value: %d\n", storage[1]);
+	//printf("Parameter Value: %d\n", storage[1]);
 	int32_t n, status;
 	status = CAENVME_End(storage[1]);
 	info[0] = status;
@@ -42,7 +42,7 @@ int32_t ReadCAENVME_End(int32_t storage[6], int32_t sockfd){
 }
 
 int32_t ReadCAENVME_WriteCycle(int32_t storage[6], int32_t sockfd){
-	printf("Parameter Values: \n");
+	//printf("Parameter Values: \n");
 	/*
 	int32_t i;
 	for(i=0; i<6; i++){
@@ -59,7 +59,7 @@ int32_t ReadCAENVME_WriteCycle(int32_t storage[6], int32_t sockfd){
 }
 
 int32_t ReadCAENVME_ReadCycle(int32_t storage[6], int32_t sockfd){
-	printf("Parameter Values: \n");
+	//printf("Parameter Values: \n");
 	/*
 	int32_t i;
 	for(i=0; i<6; i++){
